@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Web Page</title>
+</head>
+<body>
+    <h1>Lab 10 Problem 3: Flask Web Page</h1>
+    <p>How I installed Flask and built this page.</p>
+    <h2>Installation Process</h2>
+    <p>I already had Python installed, so I installed Flask by running <code>pip install flask</code> in the terminal.</p>
+    <h2>Building the Page</h2>
+    <p>I created a Python script <code>main.py</code> and an HTML template file <code>/templates/index.html</code> to display content on the web page.</p>
+    <h2>Difficulties Encountered</h2>
+    <p>The main difficulty I encountered was understanding how Flask renders templates and sets up routes. I solved this by consulting Flask documentation and reading through tutorials on their official website.</p>
+    <p>Flask requires a specific folder structure, such as placing HTML templates in the /templates directory. Initially, I tried rendering a file from the root directory, which resulted in an error. I read Flask's documentation, which clarified the need to place all templates in the /templates folder. I reorganized my files accordingly.</p>
+    <p>This is what my <code>main.py</code> file looks like:</p>
+    <pre><code>
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+if __name__ == '__main__':
+    app.run()
+    </code></pre>
+</body>
+</html>
